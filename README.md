@@ -92,6 +92,18 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 **Problem:** Auth sessions weren't persisting across page navigations in the App Router.  
 **Solution:** Used `@supabase/ssr` with proper cookie handling in the middleware to refresh tokens on every request, following the official Supabase + Next.js guide.
 
+### 5. Production Authentication Redirects
+**Problem:** Google Login worked on localhost but failed with "redirect_uri_mismatch" after deploying to Vercel.  
+**Solution:** Added the Vercel production URL (e.g., `https://smart-bookmark-app.vercel.app/**`) to the **Redirect URLs** whitelist in the Supabase Dashboard. This ensures Supabase trusts the callback from the deployed app.
+
+## 🎨 UI/UX Overhaul
+
+The application underwent a major design transformation to achieve a premium, "Cosmic Glass" aesthetic:
+
+- **Login Page:** Features a 3D glass card with dynamic mesh gradients that react to mouse movement.
+- **Dashboard:** Implements a masonry grid layout for bookmarks with rich hover effects and ambient lighting.
+- **Interactions:** Subtle micro-animations, glowing inputs, and smooth transitions using standard CSS and Tailwind utilities (no heavy animation libraries).
+
 ## 📁 Project Structure
 
 ```
