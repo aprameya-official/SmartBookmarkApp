@@ -76,25 +76,21 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## 🐛 Problems I Ran Into & How I Solved Them
 
-### 1. Folder Name Restrictions with `create-next-app`
-**Problem:** The project folder name contained spaces and capital letters ("Smart Bookmark app"), which caused `create-next-app` to fail due to npm naming restrictions.  
-**Solution:** Created the Next.js project in a temporary subdirectory with a valid npm name (`smart-bookmark-app`), then moved all files to the parent directory.
-
-### 2. OAuth Redirect URI Mismatch
+### 1. OAuth Redirect URI Mismatch
 **Problem:** Google OAuth was returning an error because the redirect URI didn't match.  
 **Solution:** Made sure to add `https://<supabase-project>.supabase.co/auth/v1/callback` as an authorized redirect URI in Google Cloud Console, and configured the same in Supabase's Auth provider settings.
 
-### 3. Real-time Not Working Initially
+### 2. Real-time Not Working Initially
 **Problem:** Supabase Realtime wasn't picking up changes to the `bookmarks` table.  
 **Solution:** Had to explicitly enable Realtime for the table by running `ALTER PUBLICATION supabase_realtime ADD TABLE bookmarks;` in the SQL editor, and also ensure RLS policies were properly set up (Realtime respects RLS).
 
-### 4. Middleware Cookie Handling
+### 3. Middleware Cookie Handling
 **Problem:** Auth sessions weren't persisting across page navigations in the App Router.  
 **Solution:** Used `@supabase/ssr` with proper cookie handling in the middleware to refresh tokens on every request, following the official Supabase + Next.js guide.
 
-### 5. Production Authentication Redirects
+### 4. Production Authentication Redirects
 **Problem:** Google Login worked on localhost but failed with "redirect_uri_mismatch" after deploying to Vercel.  
-**Solution:** Added the Vercel production URL (e.g., `https://smart-bookmark-app.vercel.app/**`) to the **Redirect URLs** whitelist in the Supabase Dashboard. This ensures Supabase trusts the callback from the deployed app.
+**Solution:** Added the Vercel production URL (e.g., `https://smart-bookmark-app.vercel.app/**`) to the Redirect URLs whitelist in the Supabase Dashboard. This ensures Supabase trusts the callback from the deployed app.
 
 ## 🎨 UI/UX Overhaul
 
