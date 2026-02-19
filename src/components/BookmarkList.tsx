@@ -115,12 +115,12 @@ export default function BookmarkList({
                     href={bookmark.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group relative flex flex-col h-full bg-white/50 dark:bg-gray-900/40 backdrop-blur-md border border-white/20 dark:border-white/5 rounded-2xl p-5 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/10 hover:bg-white/80 dark:hover:bg-gray-800/60 animate-slide-up"
+                    className="group relative flex flex-col h-full glass rounded-2xl p-5 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/10 hover:bg-white/80 animate-slide-up"
                     style={{ animationDelay: `${index * 50}ms` }}
                 >
                     {/* Top Bar: Favicon + Date */}
                     <div className="flex items-start justify-between mb-4">
-                        <div className="relative w-12 h-12 rounded-xl bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 shadow-sm border border-black/5 dark:border-white/5 flex items-center justify-center overflow-hidden group-hover:shadow-md transition-shadow">
+                        <div className="relative w-12 h-12 rounded-xl bg-gradient-to-br from-white to-gray-50 shadow-sm border border-black/5 flex items-center justify-center overflow-hidden group-hover:shadow-md transition-shadow">
                             {getFaviconUrl(bookmark.url) ? (
                                 <img
                                     src={getFaviconUrl(bookmark.url)!}
@@ -150,7 +150,7 @@ export default function BookmarkList({
                         <button
                             onClick={(e) => handleDelete(e, bookmark.id)}
                             disabled={deletingId === bookmark.id}
-                            className="opacity-0 group-hover:opacity-100 p-2 rounded-lg text-gray-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all transform scale-90 group-hover:scale-100 focus:outline-none"
+                            className="opacity-0 group-hover:opacity-100 p-2 rounded-lg text-gray-400 hover:text-red-500 hover:bg-red-50 transition-all transform scale-90 group-hover:scale-100 focus:outline-none"
                             title="Delete bookmark"
                         >
                             {deletingId === bookmark.id ? (
@@ -165,14 +165,14 @@ export default function BookmarkList({
 
                     {/* Content */}
                     <div className="mt-auto">
-                        <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-1 line-clamp-2 leading-tight group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                        <h3 className="text-base font-semibold text-gray-900 mb-1 line-clamp-2 leading-tight group-hover:text-indigo-600 transition-colors">
                             {bookmark.title}
                         </h3>
-                        <p className="text-xs text-gray-500 dark:text-gray-400 truncate mb-4 font-mono opacity-80 group-hover:opacity-100 transition-opacity">
+                        <p className="text-xs text-gray-500 truncate mb-4 font-mono opacity-80 group-hover:opacity-100 transition-opacity">
                             {new URL(bookmark.url).hostname}
                         </p>
 
-                        <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-800">
+                        <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                             <span className="text-[10px] font-medium text-gray-400 uppercase tracking-wider">
                                 {formatDate(bookmark.created_at)}
                             </span>
@@ -186,7 +186,7 @@ export default function BookmarkList({
                     </div>
 
                     {/* Hover Glow */}
-                    <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-black/5 dark:ring-white/10 group-hover:ring-indigo-500/50 transition-all pointer-events-none" />
+                    <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-black/5 group-hover:ring-indigo-500/50 transition-all pointer-events-none" />
                 </a>
             ))}
         </div>

@@ -35,7 +35,7 @@ export default function Navbar({ user }: { user: User }) {
                             />
                         </svg>
                     </div>
-                    <span className="hidden sm:block text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">
+                    <span className="hidden sm:block text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600">
                         Smart Bookmark
                     </span>
                 </div>

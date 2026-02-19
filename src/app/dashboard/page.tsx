@@ -38,7 +38,7 @@ export default async function DashboardPage() {
                 {/* Hero Section */}
                 <section className="text-center space-y-6 animate-fade-in relative z-10">
                     <div className="inline-block">
-                        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-indigo-800 to-gray-900 dark:from-white dark:via-indigo-200 dark:to-white drop-shadow-sm pb-2">
+                        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-indigo-800 to-gray-900 drop-shadow-sm pb-2">
                             Welcome back,{" "}
                             <span>
                                 {user.user_metadata?.full_name?.split(" ")[0] || "Creative"}

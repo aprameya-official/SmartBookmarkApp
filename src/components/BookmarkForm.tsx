@@ -69,7 +69,7 @@ export default function BookmarkForm() {
                         onChange={(e) => setTitle(e.target.value)}
                         onFocus={() => setActiveField('title')}
                         onBlur={() => setActiveField(null)}
-                        className="w-full relative bg-transparent px-4 py-3.5 rounded-xl text-[var(--color-text)] placeholder:text-gray-400/70 focus:outline-none transition-all font-medium border border-transparent focus:border-white/10"
+                        className="w-full relative bg-transparent px-4 py-3.5 rounded-xl text-[var(--color-text)] placeholder:text-gray-500/80 focus:outline-none transition-all font-medium border border-transparent focus:border-white/10"
                     />
                 </div>
 
@@ -86,7 +86,7 @@ export default function BookmarkForm() {
                         onChange={(e) => setUrl(e.target.value)}
                         onFocus={() => setActiveField('url')}
                         onBlur={() => setActiveField(null)}
-                        className="w-full relative bg-transparent px-4 py-3.5 rounded-xl text-[var(--color-text)] placeholder:text-gray-400/70 focus:outline-none transition-all font-medium border border-transparent focus:border-white/10"
+                        className="w-full relative bg-transparent px-4 py-3.5 rounded-xl text-[var(--color-text)] placeholder:text-gray-500/80 focus:outline-none transition-all font-medium border border-transparent focus:border-white/10"
                     />
                 </div>
 
